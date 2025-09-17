@@ -1,0 +1,8 @@
+<div class="competenceBlock">
+  <h4>{{ competence.name }}</h4>
+  <div class="listeCopentences">
+    @for (cmp of competence.competences; track $index) {
+    <app-progress [name]="cmp.nom" [targetProgress]="cmp.niveau"></app-progress>
+    }
+  </div>
+</div>

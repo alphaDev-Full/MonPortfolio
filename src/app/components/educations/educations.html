@@ -1,0 +1,67 @@
+<div class="education-block">
+  <div class="titre">
+    <h1>Educations</h1>
+  </div>
+
+  <div @slideInHorizontalTop>
+    <ngb-carousel [interval]="0" [wrap]="true" [keyboard]="true">
+      <ng-template
+        ngbSlide
+        *ngFor="let group of educationGroups; let i = index"
+      >
+        <div class="slide-container">
+          <app-education-card *ngFor="let etude of group" [etude]="etude">
+          </app-education-card>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+
+  <div class="citation">
+    <cite
+      >"L'éducation est l'arme la plus puissante que l'on puisse utiliser pour
+      changer le monde."<br />
+      <p align="center">--Nelson Mandela</p>
+    </cite>
+  </div>
+</div>
+
+<!--
+    <div class="etudes-block">
+    <button class="prev" (click)="Precedent()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#e3e3e3"
+      >
+        <path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z" />
+      </svg>
+    </button>
+    <div class="etudes">
+    
+      <app-education-card
+        [@fadeSlide]
+        [etude]="etude()"
+        [attr.data-key]="etude().titre"
+      ></app-education-card>
+      <app-education-card
+        [@fadeSlide]
+        [etude]="etudeSuiv()"
+        [attr.data-key]="etude().titre"
+      ></app-education-card>
+    </div>
+    <button class="suiv" (click)="Suivant()">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#e3e3e3"
+      >
+        <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z" />
+      </svg>
+    </button>
+  </div>
+      -->

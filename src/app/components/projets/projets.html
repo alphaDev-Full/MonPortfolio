@@ -1,0 +1,10 @@
+<div class="projet-block">
+  <div class="titre">
+    <h1>Mes projets</h1>
+  </div>
+  <div class="projets" @slideInHorizontalTop>
+    @for (projet of projets; track $index) {
+    <app-projet-card [projet]="projet"></app-projet-card>
+    }
+  </div>
+</div>

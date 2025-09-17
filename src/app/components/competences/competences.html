@@ -1,0 +1,43 @@
+<div class="competencesBlock">
+  <div class="titre">
+    <h1>Copentences téchniques</h1>
+  </div>
+  <div class="competences">
+    <div class="buttons" @slideInHorizontalLeft>
+      <div class="btn-left">
+        <button
+          (click)="onClik('backend')"
+          [ngClass]="{ isCliked: type() === 'backend' }"
+        >
+          Backend
+        </button>
+        <button
+          (click)="onClik('frontend')"
+          [ngClass]="{ isCliked: type() === 'frontend' }"
+        >
+          Frontend
+        </button>
+      </div>
+      <div class="btn-right">
+        <button
+          (click)="onClik('tolls')"
+          [ngClass]="{ isCliked: type() === 'tolls' }"
+        >
+          Tolls
+        </button>
+        <button
+          (click)="onClik('soft Skills')"
+          [ngClass]="{ isCliked: type() === 'soft Skills' }"
+        >
+          Soft Skills
+        </button>
+      </div>
+    </div>
+    <div class="card" @slideInHorizontalTop>
+      @for (cmp of competences; track $index) { @if (cmp.name.toLowerCase() ===
+      type().toLocaleLowerCase()) {
+      <app-competence-card [competence]="cmp"></app-competence-card>
+      } }
+    </div>
+  </div>
+</div>

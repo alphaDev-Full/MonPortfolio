@@ -1,0 +1,75 @@
+<div class="contact-block">
+  <div class="titre">
+    <h1>Contact</h1>
+  </div>
+  <div class="main">
+    <div class="liens" @slideInHorizontalLeft>
+      <p>Laissez moi un message, je répondrai dès que possible</p>
+      <div class="boutons">
+        <a href="https://www.linkedin.com/in/alphdevful/" target="_blank">
+          <i class="fab fa-linkedin"></i> Linkdln
+        </a>
+        <a href="mailto:alphaoumar2260@gmail.com" target="_blank">
+          <i class="fas fa-envelope"></i> Mail
+        </a>
+        <a href="https://github.com/alphaDev-Full" target="_blank">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+    <div class="formulaire" @slideInHorizontalTop>
+      <form action="" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        <label for="nom">Nom*</label>
+        <input placeholder="Votre Nom" type="text" formControlName="nom" />
+        @if (formGroup.controls.nom.hasError('required') &&
+        formGroup.controls.nom.touched) {
+        <span>Le nom est obligatoire</span>
+        }
+        <label for="prenom">Prénom*</label>
+        <input
+          placeholder="Votre prénom"
+          type="text"
+          formControlName="prenom"
+        />
+        @if (formGroup.controls.prenom.hasError('required') &&
+        formGroup.controls.nom.touched) {
+        <span>Le Prénom est obligatoire</span>
+        }
+
+        <label for="mail">Mail*</label>
+        <input
+          placeholder="Votre mail"
+          type="email"
+          formControlName="mail"
+          email
+        />
+        @if (formGroup.controls.mail.hasError('required') &&
+        formGroup.controls.prenom.touched) {
+        <span>Le nom est obligatoire</span>
+        } @else if (formGroup.controls.mail.hasError('email') &&
+        formGroup.controls.mail.touched ) {
+        <span>Le mail doit être au bon format!</span>
+        }
+
+        <label for="message">Votre message*</label>
+        <textarea
+          placeholder="Votre message"
+          name="message"
+          id="message"
+          rows="5"
+          cols="15"
+          formControlName="message"
+        ></textarea>
+        @if (formGroup.controls.message.hasError('required') &&
+        formGroup.controls.message.touched ) {
+        <span>Le message est obligatoire!</span>
+        }
+
+        <button [disabled]="!formGroup.valid">Envoyer</button>
+        <div class="confirmation" [ngClass]="{ succes: isValid }">
+          <span> ✅ Merci ! Votre message a été envoyé!. </span>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

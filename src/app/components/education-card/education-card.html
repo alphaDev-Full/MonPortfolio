@@ -1,0 +1,19 @@
+<div class="education-card">
+  <div>
+    <div class="title">
+      <h2>{{ etude.titre }}</h2>
+    </div>
+    <div class="buttons">
+      <div class="date">
+        <h3>{{ etude.lieux }}</h3>
+      </div>
+    </div>
+    <div class="description">
+      <ul>
+        @for (desc of etude.description; track $index) {
+        <li>{{ desc }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

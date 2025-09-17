@@ -1,0 +1,20 @@
+<div class="projet-card">
+  <div class="title">
+    <h2>{{ projet.titre }}</h2>
+  </div>
+  <div class="buttons">
+    <div class="date">
+      <h3>{{ projet.date }}</h3>
+    </div>
+    <div class="gitHub">
+      <h3><a [href]="projet.gitHubLink">GitHub</a></h3>
+    </div>
+  </div>
+  <div class="description">
+    <ul>
+      @for (desc of projet.description; track $index) {
+      <li>{{ desc }}</li>
+      }
+    </ul>
+  </div>
+</div>

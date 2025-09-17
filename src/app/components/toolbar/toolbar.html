@@ -1,0 +1,126 @@
+<nav class="navbar navbar-expand-lg navbar-light fixed-top custom-toggler">
+  <!-- Logo -->
+  <a class="navbar-brand ms-3" href="#"
+    >Alpha/Codeur
+    <span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="40px"
+        viewBox="0 -960 960 960"
+        width="40px"
+        fill="#e3e3e3"
+      >
+        <path
+          d="M480-540ZM80-160v-80h400v80H80Zm120-120q-33 0-56.5-23.5T120-360v-360q0-33 23.5-56.5T200-800h560q33 0 56.5 23.5T840-720H200v360h280v80H200Zm600 40v-320H640v320h160Zm-180 80q-25 0-42.5-17.5T560-220v-360q0-25 17.5-42.5T620-640h200q25 0 42.5 17.5T880-580v360q0 25-17.5 42.5T820-160H620Zm100-300q13 0 21.5-9t8.5-21q0-13-8.5-21.5T720-520q-12 0-21 8.5t-9 21.5q0 12 9 21t21 9Zm0 60Z"
+        />
+      </svg>
+    </span>
+  </a>
+
+  <!-- Bouton burger -->
+  <button
+    class="navbar-toggler"
+    type="button"
+    (click)="isCollapsed = !isCollapsed"
+  >
+    <span>
+      @if(isCollapsed){
+      <!--Icon pour Ouverture-->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#e3e3e3"
+      >
+        <path
+          d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+        />
+      </svg>
+      } @else {
+      <!--Icon pour Ouverture-->
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        height="24px"
+        viewBox="0 -960 960 960"
+        width="24px"
+        fill="#e3e3e3"
+      >
+        <path
+          d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+        />
+      </svg>
+      }
+    </span>
+  </button>
+
+  <!-- Liens du menu -->
+  <div
+    class="collapse navbar-collapse"
+    [ngbCollapse]="isCollapsed"
+    [@slideInHorizontal]="!isCollapsed ? 'open' : 'closed'"
+  >
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link active"
+          (click)="onClick()"
+          routerLink="/home"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Accueil</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          (click)="onClick()"
+          routerLink="/about"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ><span>À propos</span></a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          (click)="onClick()"
+          routerLink="/competences"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Compétences</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          (click)="onClick()"
+          routerLink="/projets"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Projets</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          (click)="onClick()"
+          routerLink="/educations"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Éducation</a
+        >
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          (click)="onClick()"
+          routerLink="/contact"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

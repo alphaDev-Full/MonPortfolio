@@ -1,0 +1,51 @@
+.education-card {
+  text-align: left;
+  padding: 2px 10px;
+  border-radius: 10px;
+  border: 2px solid #ccc;
+  color: white;
+  height: 99%;
+  transition: all 1s ease;
+  background: linear-gradient(rgba(10, 1, 105, 0.2), rgba(10, 1, 105, 0.1));
+
+  &:hover {
+    transform: scale(1.06);
+    background: linear-gradient(rgba(10, 1, 105, 0.5), rgba(10, 1, 105, 0.3));
+  }
+
+  h2 {
+    text-align: left;
+    font-size: 23px;
+    padding-left: 5px;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 20px;
+    padding: 2px 10px;
+    background-color: #698192;
+    border-radius: 12px;
+    display: inline-block;
+
+    a {
+      all: unset;
+      cursor: pointer;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    gap: 15px;
+  }
+}
+
+// RESPONSIVE
+
+@media screen and (max-width: 700px) {
+  .education-card {
+    transition: none;
+  }
+  .education-card:hover {
+    transform: none;
+  }
+}

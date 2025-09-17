@@ -1,0 +1,162 @@
+.contact-block {
+  margin-top: 9rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.titre h1 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  text-align: center;
+}
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.liens {
+  background-color: rgba($color: #2a2956, $alpha: 0.2);
+  padding: 80px 20px 90px 20px;
+  border-radius: 20px;
+  height: 460px;
+  width: 35%;
+  text-align: center;
+}
+.boutons {
+  margin: 25px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
+}
+
+a {
+  all: unset;
+
+  background-color: rgb(108, 108, 152);
+  padding: 15px 20px;
+
+  color: white;
+  font-size: 25px;
+  max-width: 85%;
+  width: 85%;
+  text-align: center;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition: 255ms all ease-in-out;
+  &:hover {
+    background-color: blue;
+  }
+}
+.formulaire {
+  background-color: rgba($color: #2a2956, $alpha: 0.2);
+  padding: 5px 15px;
+  border-radius: 20px;
+
+  width: 40%;
+}
+.formulaire form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.formulaire label {
+  font-weight: 600;
+  margin: 8px 0 5px 0;
+  color: white;
+}
+
+.formulaire input,
+.formulaire textarea {
+  padding: 5px 15px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  color: white;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba($color: #767a7c, $alpha: 0.4);
+}
+
+.formulaire input:focus,
+.formulaire textarea:focus {
+  border-color: rgb(108, 108, 152);
+  box-shadow: 0 0 8px rgba(108, 108, 152, 0.4);
+}
+
+.formulaire input:hover,
+.formulaire textarea:hover {
+  border-color: rgb(51, 51, 147);
+}
+
+.formulaire button {
+  all: unset;
+  margin-top: 15px;
+  padding: 10px;
+  background-color: rgb(11, 11, 94);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+}
+
+.formulaire button:hover {
+  background-color: blue;
+}
+.formulaire button:disabled {
+  background-color: rgb(72, 70, 70);
+
+  &:hover {
+    transition: none;
+    transform: none;
+    cursor: default;
+  }
+}
+span {
+  margin-top: 4px;
+  color: rgb(156, 67, 67);
+  font-size: small;
+}
+.confirmation {
+  display: none;
+}
+.succes {
+  display: block;
+  margin-top: 4px;
+}
+//Responsive
+
+@media screen and (max-width: 768px) {
+  .contact-block {
+    margin-top: 6rem;
+  }
+  .liens {
+    width: 80%;
+    padding: 10px 20px;
+    height: auto;
+  }
+  .formulaire {
+    width: 80%;
+  }
+  a {
+    font-size: 20px;
+  }
+}
